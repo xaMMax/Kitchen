@@ -38,38 +38,33 @@
           поставки по всій Україні.
         </p>
       </section>
-      <div>
-        <button id="contactBtn">Зв'яжіться зі мною</button>
-        <div id="formContainer" class="hidden">
-          <form id="contactForm" data-netlify="true">
-            <input id="name" type="text" placeholder="Ім'я" required="" />
-            <input
-              id="email"
-              type="email"
-              placeholder="Імейл (необов'язково)"
-            />
-            <input
-              id="phone"
-              type="tel"
-              pattern="[+0-9\s]+"
-              placeholder="Номер телефону (обов'язково)"
-              required=""
-            />
-            <textarea
-              id="message"
-              placeholder="Коментар (не обов'язково)"
-              rows="2"
-            ></textarea>
-            <button id="submitBtn" type="submit" disabled>Відправити</button>
-          </form>
 
-          <div
-            id="successMessage"
-            class="hidden"
-            style="width: 300px; height: 100px"
-          >
-            Дякую за повідомлення, з Вами звяжуться у найближчий час!
-          </div>
+      <button id="contactBtn">Зв'яжіться зі мною</button>
+      <div id="formContainer" class="hidden">
+        <form id="contactForm" data-netlify="true">
+          <input id="name" type="text" placeholder="Ім'я" required="" />
+          <input id="email" type="email" placeholder="Імейл (необов'язково)" />
+          <input
+            id="phone"
+            type="tel"
+            pattern="[+0-9\s]+"
+            placeholder="Номер телефону (обов'язково)"
+            required=""
+          />
+          <textarea
+            id="message"
+            placeholder="Коментар (не обов'язково)"
+            rows="2"
+          ></textarea>
+          <button id="submitBtn" type="submit" disabled>Відправити</button>
+        </form>
+
+        <div
+          id="successMessage"
+          class="hidden"
+          style="width: 300px; height: 100px"
+        >
+          Дякую за повідомлення, з Вами звяжуться у найближчий час!
         </div>
       </div>
     </main>

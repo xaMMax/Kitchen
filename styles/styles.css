@@ -74,6 +74,9 @@ body {
 .hidden {
   display: none;
 }
+.successMessage {
+  display: none;
+}
 
 #formContainer {
   position: fixed;

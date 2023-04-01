@@ -42,38 +42,41 @@
 //   var marker = new google.maps.Marker({ position: location, map: map });
 // }
 // feedback form
-const formContainer = document.getElementById("formContainer");
-const contactBtn = document.getElementById("contactBtn");
-const successMessage = document.getElementById("successMessage");
-const contactForm = document.getElementById("contactForm");
-const nameField = document.getElementById("name");
-const phoneField = document.getElementById("phone");
-const submitBtn = document.getElementById("submitBtn");
+document.addEventListener("DOMContentLoaded", function () {
+  const formContainer = document.getElementById("formContainer");
+  const contactBtn = document.getElementById("contactBtn");
+  const successMessage = document.getElementById("successMessage");
+  const contactForm = document.getElementById("contactForm");
+  const nameField = document.getElementById("name");
+  const phoneField = document.getElementById("phone");
+  const submitBtn = document.getElementById("submitBtn");
+  // const contactDiv = document.getElementsByClassName("");
 
-contactBtn.addEventListener("click", function () {
-  formContainer.classList.toggle("hidden");
-});
+  contactBtn.addEventListener("click", function () {
+    formContainer.classList.toggle("hidden");
+  });
 
-function toggleSubmitButton() {
-  if (nameField.value.trim() !== "" && phoneField.value.trim() !== "") {
-    submitBtn.classList.add("active");
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.classList.remove("active");
-    submitBtn.disabled = true;
+  function toggleSubmitButton() {
+    if (nameField.value.trim() !== "" && phoneField.value.trim() !== "") {
+      submitBtn.classList.add("active");
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.classList.remove("active");
+      submitBtn.disabled = true;
+    }
   }
-}
 
-nameField.addEventListener("input", toggleSubmitButton);
-phoneField.addEventListener("input", toggleSubmitButton);
+  nameField.addEventListener("input", toggleSubmitButton);
+  phoneField.addEventListener("input", toggleSubmitButton);
 
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  formContainer.classList.add("hidden");
-  successMessage.classList.remove("hidden");
-  setTimeout(() => {
-    successMessage.classList.add("hidden");
-  }, 3000);
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    formContainer.classList.add("hidden");
+    successMessage.classList.remove("hidden");
+
+    setTimeout(() => {
+      successMessage.classList.add("hidden");
+    }, 3000);
+  });
 });
-
 // feedback form
