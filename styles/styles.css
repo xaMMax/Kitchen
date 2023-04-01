@@ -206,47 +206,6 @@ button#contactBtn {
   background-color: #0069d9;
 }
  */
-.contact-info,
-.contact-form {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.contact-info h1,
-.contact-form h2 {
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-
-.contact-form button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.contact-form button:hover {
-  background-color: #0069d9;
-}
 
 .about-us {
   padding: 20px;
