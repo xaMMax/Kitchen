@@ -42,42 +42,40 @@ function initMap() {
   var marker = new google.maps.Marker({ position: location, map: map });
 }
 // feedback form
-const form = document.querySelector("#contact-form");
-const submit = document.querySelector("#submit");
-const message = document.querySelector("#message");
+document.addEventListener("DOMContentLoaded", function () {
+  const formContainer = document.getElementById("formContainer");
+  const contactBtn = document.getElementById("contactBtn");
+  const successMessage = document.getElementById("successMessage");
+  const contactForm = document.getElementById("contactForm");
+  const nameField = document.getElementById("name");
+  const phoneField = document.getElementById("phone");
+  const submitBtn = document.getElementById("submitBtn");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const xhr = new XMLHttpRequest();
+  contactBtn.addEventListener("click", function () {
+    formContainer.classList.toggle("hidden");
+  });
 
-  xhr.open("POST", "send-email.php", true);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        message.textContent =
-          "Дякуємо за повідомлення, з Вами зв'яжуться у найближчий час.";
-        message.style.display = "block";
-        form.reset();
-        submit.classList.remove("active");
-      } else {
-        message.textContent =
-          "Помилка відправки форми. Будь ласка, спробуйте знову.";
-        message.style.display = "block";
-      }
+  function toggleSubmitButton() {
+    if (nameField.value.trim() !== "" && phoneField.value.trim() !== "") {
+      submitBtn.classList.add("active");
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.classList.remove("active");
+      submitBtn.disabled = true;
     }
-  };
-  xhr.send(formData);
-});
-
-form.addEventListener("input", () => {
-  const validName = form.name.checkValidity();
-  const validPhone = form.phone.checkValidity();
-
-  if (validName && validPhone) {
-    submit.classList.add("active");
-  } else {
-    submit.classList.remove("active");
   }
+
+  nameField.addEventListener("input", toggleSubmitButton);
+  phoneField.addEventListener("input", toggleSubmitButton);
+
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    formContainer.classList.add("hidden");
+    successMessage.classList.remove("hidden");
+    setTimeout(() => {
+      successMessage.classList.add("hidden");
+    }, 3000);
+  });
 });
+
 // feedback form
