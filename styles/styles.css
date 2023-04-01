@@ -14,14 +14,15 @@ body {
   background-size: contain;
 }
 .header {
+  display: inline;
+  justify-content: center;
   background-color: #333333;
   padding: 10px 20px;
   width: 80%;
+  height: 100px;
 }
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
 .nav-logo {
   color: #ffffff;
@@ -46,6 +47,7 @@ body {
   text-decoration-color: rgba(143, 58, 15, 0.748);
   text-decoration-thickness: 3px;
 }
+
 .main {
   padding: 50px 20px;
   /* background-image: url(/jpg/index_background.jpg); */
@@ -67,6 +69,58 @@ body {
   color: #ffffff;
   width: 100%;
 }
+
+/* feedback form */
+css #contact-form {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  background-color: #6b6b6b;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#contact-form textarea {
+  height: 60px;
+  resize: none;
+}
+
+#submit {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #a9a9a9;
+  color: #fff;
+  cursor: not-allowed;
+  outline: none;
+}
+
+#submit.active {
+  cursor: pointer;
+  background-color: #00ff00;
+}
+/* feedback form ends */
 /* 
 .chat-widget {
   position: fixed;

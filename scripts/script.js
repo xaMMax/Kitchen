@@ -41,3 +41,43 @@ function initMap() {
   });
   var marker = new google.maps.Marker({ position: location, map: map });
 }
+// feedback form
+const form = document.querySelector("#contact-form");
+const submit = document.querySelector("#submit");
+const message = document.querySelector("#message");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("POST", "send-email.php", true);
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        message.textContent =
+          "Дякуємо за повідомлення, з Вами зв'яжуться у найближчий час.";
+        message.style.display = "block";
+        form.reset();
+        submit.classList.remove("active");
+      } else {
+        message.textContent =
+          "Помилка відправки форми. Будь ласка, спробуйте знову.";
+        message.style.display = "block";
+      }
+    }
+  };
+  xhr.send(formData);
+});
+
+form.addEventListener("input", () => {
+  const validName = form.name.checkValidity();
+  const validPhone = form.phone.checkValidity();
+
+  if (validName && validPhone) {
+    submit.classList.add("active");
+  } else {
+    submit.classList.remove("active");
+  }
+});
+// feedback form
