@@ -42,41 +42,73 @@
 //   var marker = new google.maps.Marker({ position: location, map: map });
 // }
 // feedback form
-document.addEventListener("DOMContentLoaded", function () {
-  const formContainer = document.getElementById("formContainer");
-  const contactBtn = document.getElementById("contactBtn");
-  const successMessage = document.getElementById("successMessage");
-  const contactForm = document.getElementById("contactForm");
-  const nameField = document.getElementById("name");
-  const phoneField = document.getElementById("phone");
-  const submitBtn = document.getElementById("submitBtn");
-  // const contactDiv = document.getElementsByClassName("");
+const MODAL_ACTIVE_CLASS_NAME = "modal-active";
 
-  contactBtn.addEventListener("click", function () {
-    formContainer.classList.toggle("hidden");
-  });
+const contactBtn = document.getElementById("contactBtn");
+// const formContainer = document.getElementById("formContainer");
+const successMessage = document.getElementById("successMessage");
+const contactForm = document.getElementById("contactForm");
+const nameField = document.getElementById("name");
+const phoneField = document.getElementById("phone");
+const submitBtn = document.getElementById("submitBtn");
 
-  function toggleSubmitButton() {
-    if (nameField.value.trim() !== "" && phoneField.value.trim() !== "") {
-      submitBtn.classList.add("active");
-      submitBtn.disabled = false;
-    } else {
-      submitBtn.classList.remove("active");
-      submitBtn.disabled = true;
-    }
-  }
+// feedback form BANDEROGUS !!!!
+// const MODAL_ACTIVE_CLASS_NAME = "modal-active";
 
-  nameField.addEventListener("input", toggleSubmitButton);
-  phoneField.addEventListener("input", toggleSubmitButton);
+// openFormModalBtn.addEventListener("click", () => {
+//   formModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
+// });
 
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    formContainer.classList.add("hidden");
-    successMessage.classList.remove("hidden");
-
-    setTimeout(() => {
-      successMessage.classList.add("hidden");
-    }, 3000);
-  });
+contactBtn.addEventListener("click", () => {
+  formContainer.classList.add(MODAL_ACTIVE_CLASS_NAME);
 });
-// feedback form
+
+const closeFormModal = () => {
+  formContainer.classList.remove(MODAL_ACTIVE_CLASS_NAME);
+};
+
+const closeSuccessModal = () => {
+  successMessage.classList.remove(MODAL_ACTIVE_CLASS_NAME);
+};
+
+const openSuccessModal = () => {
+  successMessage.classList.add(MODAL_ACTIVE_CLASS_NAME);
+};
+//
+// closeBtns.forEach((btn) => {
+//   btn.addEventListener("click", (e) => {
+//     e.stopPropagation();
+//     closeFormModal();
+//     closeSuccessModal();
+//   });
+// });
+//clear form fields
+function clearFormFields() {
+  const modalFiends = contactForm.querySelectorAll("input");
+
+  modalFiends.forEach((field) => {
+    field.value = "";
+  });
+}
+//send data to netlify form
+form.addEventListener("submitBtn", (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => {
+      // showGooseAnim();
+
+      setTimeout(() => {
+        closeFormModal();
+        setTimeout(openSuccessModal, 700);
+        setTimeout(closeSuccessModal, 4000);
+        clearFormFields();
+      }, 4000);
+    })
+    .catch((error) => console.log("Sending form failed"));
+});
