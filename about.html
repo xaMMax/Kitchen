@@ -40,19 +40,87 @@
           </p>
         </section>
 
-        <button id="contactBtn">Зв'яжіться зі мною</button>
+        <button id="open-form-modal-btn" class="open-form-modal-btn">
+          Зв'яжіться зі мною
+        </button>
       </main>
 
       <footer class="footer">
         <p>© ModernKitchenUA, 2022. Усі права захищені.</p>
       </footer>
     </div>
-    <div id="formContainer" class="formContainer">
+    <div class="modal-bgd" id="form-modal">
+      <div class="modal-form-container">
+        <form action="#" class="modal-form" data-netlify="true" id="form">
+          <h4 class="modal-form-title">
+            Вишліть нам повідомлення і ми вам передзвонимо
+          </h4>
+          <div class="modal-form-field">
+            <label for="user-name" class="modal-field-name">Ім'я</label>
+            <input
+              required
+              pattern=".*\S+.*"
+              type="text"
+              class="modal-field-input"
+              id="user-name"
+              name="Ім'я"
+            />
+          </div>
+          <div class="modal-form-field">
+            <label for="user-email" class="modal-field-name">Email</label>
+            <input
+              required
+              pattern=".*\S+.*"
+              type="email"
+              class="modal-field-input"
+              id="user-email"
+              name="Email"
+              placeholder="example@mail.com"
+            />
+          </div>
+          <div class="modal-form-field">
+            <label for="user-phone" class="modal-field-name">Телефон</label>
+            <input
+              required
+              pattern="[0-9]{9}"
+              type="tel"
+              class="modal-field-input"
+              id="user-phone"
+              name="Телефон"
+              placeholder="123456789"
+            />
+          </div>
+          <div class="modal-form-field">
+            <label for="user-message" class="modal-field-name"
+              >Повідомлення</label
+            >
+            <textarea
+              type="text"
+              class="modal-field-input"
+              id="user-message"
+              name="Повідомлення"
+              placeholder="Введіть ваше повідомлення"
+            ></textarea>
+          </div>
+          <button class="submit-btn" id="launch-btn">Відправити</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-bgd" id="success-modal">
+      <div class="modal-form modal-form-container">
+        <!--<button alt="Закрити" class="close-btn"></button>-->
+
+        <h4 class="modal-form-title">Дякуємо, інформацію відправлено</h4>
+        <p class="modal-form-description modal-description">
+          Чекайте на дзвінок.
+        </p>
+      </div>
+    </div>
+    <!-- <div id="formContainer" class="formContainer">
       <form id="contactForm" data-netlify="true" class="contactForm">
         <div class="modal-form-field">
           <label for="user-name" class="modal-field-name">Ім'я</label>
           <input
-            required
             pattern=".*\S+.*"
             type="text"
             class="modal-field-input"
@@ -63,7 +131,6 @@
         <div class="modal-form-field">
           <label for="user-phone" class="modal-field-name">Phone</label>
           <input
-            required
             pattern="[0-9]{9}"
             type="tel"
             class="modal-field-input"
@@ -75,7 +142,6 @@
         <div class="modal-form-field">
           <label for="user-email" class="modal-field-name">Email</label>
           <input
-            required
             pattern=".*\S+.*"
             type="email"
             class="modal-field-input"
@@ -95,14 +161,16 @@
 
         <button id="submitBtn" type="submitBtn">Відправити</button>
       </form>
-      <div
-        id="succesMessage"
-        class="succes"
-        style="width: 300px; height: 100px"
-      >
-        Дякую за повідомлення, з Вами звяжуться у найближчий час!
+      <div id="formContainer" class="succesMessage">
+        <div
+          id="succesMessage"
+          class="succesMessage formContainer"
+          style="width: 300px; height: 100px"
+        >
+          Дякую за повідомлення, з Вами звяжуться у найближчий час!
+        </div>
       </div>
-    </div>
+    </div> -->
     <script src="/scripts/script.js"></script>
   </body>
 </html>
