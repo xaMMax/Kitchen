@@ -7,10 +7,19 @@ const form = document.querySelector("#form");
 
 const openFormModalBtn = document.querySelector("#open-form-modal-btn");
 const launchBtn = document.querySelector("#launch-btn");
-const closeBtns = document.querySelectorAll(".close-btn");
 
 openFormModalBtn.addEventListener("click", () => {
   formModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
+
+  formModal.addEventListener(
+    "click",
+    function (event) {
+      if (event.target == formModal) {
+        closeFormModal();
+      }
+    },
+    false
+  );
 });
 
 const closeFormModal = () => {
