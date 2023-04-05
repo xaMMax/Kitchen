@@ -151,6 +151,45 @@ button#contactBtn {
   font-size: 14px;
   border-radius: 5px;
 }
+.modal-field-name {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #e2e2e2;
+  margin-bottom: 8px;
+}
+/* .banderogus-modal-button {
+  background: #ff6b0a;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  margin-top: 24px;
+} */
+.modal-field-input {
+  height: 24px;
+  background: #ffffff;
+  border: 1px solid #005bbb;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  padding: 4px 8px;
+}
+.modal-field-input-text {
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #005bbb;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  padding: 4px 8px;
+}
 
 #submitBtn.active {
   background-color: white;

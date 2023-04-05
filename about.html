@@ -49,20 +49,38 @@
     </div>
     <div id="formContainer" class="formContainer">
       <form id="contactForm" data-netlify="true" class="contactForm">
-        <input id="name" type="text" placeholder="Ім'я" required="" />
-        <input id="email" type="email" placeholder="Імейл (необов'язково)" />
-        <input
-          id="phone"
-          type="tel"
-          pattern="[+0-9\s]+"
-          placeholder="Номер телефону (обов'язково)"
-          required=""
-        />
-        <textarea
-          id="message"
-          placeholder="Коментар (не обов'язково)"
-          rows="2"
-        ></textarea>
+        <div class="modal-form-field">
+          <label for="user-name" class="modal-field-name">Ім'я</label>
+          <input
+            required
+            pattern=".*\S+.*"
+            type="text"
+            class="modal-field-input"
+            id="user-name"
+            name="Ім'я"
+          />
+        </div>
+        <div class="modal-form-field">
+          <label for="user-email" class="modal-field-name">Email</label>
+          <input
+            required
+            pattern=".*\S+.*"
+            type="email"
+            class="modal-field-input"
+            id="user-email"
+            name="Email"
+          />
+        </div>
+        <div class="modal-form-field">
+          <label for="user-text" class="modal-field-name">Text</label>
+          <textarea
+            type="text"
+            class="modal-field-input-text"
+            id="user-message"
+            name="Повідомлення"
+          ></textarea>
+        </div>
+
         <button id="submitBtn" type="submitBtn">Відправити</button>
       </form>
       <div
