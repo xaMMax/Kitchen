@@ -20,6 +20,7 @@
         </nav>
       </header>
       <main class="main">
+        <!-- About US section -->
         <section class="about-us">
           <h1>Про нас</h1>
           <p>
@@ -39,16 +40,34 @@
             поставки по всій Україні.
           </p>
         </section>
-
-        <button id="open-form-modal-btn" class="open-form-modal-btn">
-          Зв'яжіться зі мною
-        </button>
+        <!-- Contact info section -->
+        <section class="contact-info">
+          <div class="contacts">
+            <h1>Де ми знаходимось</h1>
+            <p>Адреса: вулиця Модернів, 123, Київ, Україна</p>
+            <p>Телефон: +380 (44) 123 45 67</p>
+            <p>Email: info@modernkitchenua.com.ua</p>
+          </div>
+          <div div class="contacts">
+            <img
+              src="/jpg/map.png"
+              alt="вулиця Модернів, 123, Київ, Україна"
+              class="map"
+            />
+          </div>
+        </section>
+        <!-- Callback button section -->
+        <div class="button-container">
+          <button id="open-form-modal-btn" class="open-form-modal-btn">
+            Зв'яжіться зі мною
+          </button>
+        </div>
       </main>
-
-      <footer class="footer">
-        <p>© ModernKitchenUA, 2022. Усі права захищені.</p>
-      </footer>
     </div>
+    <footer class="footer">
+      <p>© ModernKitchenUA, 2022. Усі права захищені.</p>
+    </footer>
+    <!-- Callback form -->
     <div class="modal-bgd" id="form-modal">
       <div class="modal-form-container">
         <form action="#" class="modal-form" data-netlify="true" id="form">
@@ -116,66 +135,8 @@
         </p>
       </div>
     </div>
-    <!-- <div id="formContainer" class="formContainer">
-      <form id="contactForm" data-netlify="true" class="contactForm">
-        <div class="modal-form-field">
-          <label for="user-name" class="modal-field-name">Ім'я</label>
-          <input
-            pattern=".*\S+.*"
-            type="text"
-            class="modal-field-input"
-            id="user-name"
-            name="Ім'я"
-          />
-        </div>
-        <div class="modal-form-field">
-          <label for="user-phone" class="modal-field-name">Phone</label>
-          <input
-            pattern="[0-9]{9}"
-            type="tel"
-            class="modal-field-input"
-            id="user-phone"
-            name="Phone"
-            placeholder="123456789"
-          />
-        </div>
-        <div class="modal-form-field">
-          <label for="user-email" class="modal-field-name">Email</label>
-          <input
-            pattern=".*\S+.*"
-            type="email"
-            class="modal-field-input"
-            id="user-email"
-            name="Email"
-          />
-        </div>
-        <div class="modal-form-field">
-          <label for="user-text" class="modal-field-name">Text</label>
-          <textarea
-            type="text"
-            class="modal-field-input-text"
-            id="user-message"
-            name="Повідомлення"
-          ></textarea>
-        </div>
 
-        <button id="submitBtn" type="submitBtn">Відправити</button>
-      </form>
-      <div id="formContainer" class="succesMessage">
-        <div
-          id="succesMessage"
-          class="succesMessage formContainer"
-          style="width: 300px; height: 100px"
-        >
-          Дякую за повідомлення, з Вами звяжуться у найближчий час!
-        </div>
-      </div>
-    </div> -->
     <script src="/scripts/script.js"></script>
+    <script src="/scripts/gmaps.js"></script>
   </body>
 </html>
-
-<!-- Додайте наступні стилі до вашого styles.css: Ці файли створюють шаблон сторінки
-"Про нас" для вашого вебсайту. Ця сторінка містить інформацію про вашу компанію,
-її місію та команду. Ви можете легко змінювати цей вміст або додавати ще більше
-інформації про ваш бізнес. -->
