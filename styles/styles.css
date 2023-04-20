@@ -159,6 +159,7 @@ footer {
 }
 .button-container {
   display: flex;
+  margin-top: 32px;
   justify-content: flex-end;
 }
 .open-form-modal-btn {
@@ -168,7 +169,6 @@ footer {
   padding: 10px 20px;
   border-color: rgba(143, 58, 15, 0.748);
   border-radius: 5px;
-
   margin-right: 12px;
 }
 .contact-info {
